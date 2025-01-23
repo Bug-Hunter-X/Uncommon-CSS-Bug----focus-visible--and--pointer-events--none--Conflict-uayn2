@@ -1,0 +1,15 @@
+To resolve this issue, we can use a different approach to styling the focused input element. Instead of relying solely on `:focus-visible`, we can use a combination of JavaScript and CSS or change the structure of the HTML. The following example demonstrates using JavaScript to check for the focus event and apply the styles directly.
+
+```javascript
+const inputElement = document.querySelector('.container input');
+
+inputElement.addEventListener('focus', () => {
+  inputElement.style.outline = '3px solid blue';
+});
+
+inputElement.addEventListener('blur', () => {
+  inputElement.style.outline = 'none';
+});
+```
+
+Alternatively, if possible restructure your HTML so that `pointer-events: none` is not used on the parent container of the input element. This is generally the preferred solution for maintainability and accessibility.  If this isn't possible, the javascript solution is necessary.
