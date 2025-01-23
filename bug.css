@@ -1,0 +1,16 @@
+The following CSS code snippet demonstrates an issue where the `:focus-visible` pseudo-class is not working as expected on an input element within a container that uses `pointer-events: none`. This is an uncommon error that can be easily overlooked because `pointer-events: none` does not directly affect the `:focus-visible` pseudo-class. However, it can indirectly prevent the focus from being visible. This can lead to accessibility issues for users relying on visual cues to indicate focus.
+
+```css
+.container {
+  pointer-events: none;
+}
+
+.container input {
+  /* Styles for input element */
+}
+
+.container input:focus-visible {
+  /* Styles for input element when focused and focus is visible */
+  outline: 3px solid blue;
+}
+```
